@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: "Montreal Bold";
+    src: url(./assets/font/Montreal-Bold.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Montreal Light";
+    src: url(./assets/font/Montreal-Light.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Montreal Medium";
+    src: url(./assets/font/Montreal-Medium.otf) format("opentype");
+  }
+
+  @font-face {
+    font-family: "Montreal Regular";
+    src: url(./assets/font/Montreal-Regular.otf) format("opentype");
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.wheel {
+  animation: scroll 2s ease-in-out infinite;
+}
+@keyframes scroll {
+  0% {
+    transform: translate(0, 0);
+  }
+  50% {
+    transform: translate(0, 25%);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
