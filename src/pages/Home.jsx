@@ -13,6 +13,7 @@ function Home() {
       <LoaderHome />
       <Hero />
       <AboutMe />
+      <Hero />
     </div>
   );
 }

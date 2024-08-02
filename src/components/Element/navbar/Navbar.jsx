@@ -1,23 +1,24 @@
 import { useState, useEffect } from "react";
 import { easeInOut, motion } from "framer-motion";
-import Logo from "../../assets/Logo.png";
-
+import Logo from "../../../assets/Logo.png";
 function Navbar() {
-  const navLink = ["Home", "About", "Services", "Works", "Contact"];
+  const navLink = ["About", "Services", "Works", "Contact"];
   const [navActive, setNavActive] = useState(false);
   const [showButton, setShowButton] = useState(false);
 
   const toggleNav = () => {
     setNavActive(!navActive);
+    document.body.style.overflow = navActive ? "auto" : "hidden";
   };
 
   const closeNav = () => {
     setNavActive(false);
+    document.body.style.overflow = "auto";
   };
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 600) {
+      if (window.scrollY > 800) {
         setShowButton(true);
       } else {
         setShowButton(false);
@@ -29,14 +30,6 @@ function Navbar() {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
-  useEffect(() => {
-    if (navActive) {
-      document.body.style.overflow = "hidden";
-    } else {
-      document.body.style.overflow = "auto";
-    }
-  }, [navActive]);
 
   return (
     <motion.nav
@@ -56,37 +49,57 @@ function Navbar() {
         <a href="#home">
           <img src={Logo} className="max-h-8" alt="Logo" />
         </a>
-        <ul className="hidden md:flex items-center md:gap-2 lg:gap-7 text-theme text-lg">
-          {navLink.map((link, index) => (
-            <li key={index}>
-              <a href={`#${link.toLowerCase()}`} onClick={closeNav}>
-                {link}
-              </a>
-            </li>
-          ))}
+        <ul className="flex flex-col md:flex-row  text-sm md:text-lg md:gap-2 lg:gap-7 text-montreal-regular">
+          {navLink.map((link, index) => {
+            const href = `#${link.toLowerCase()}`;
+            return (
+              <li key={index}>
+                <a
+                  href={href}
+                  onClick={closeNav}
+                  className="font-montreal-regular"
+                >
+                  {link}
+                </a>
+              </li>
+            );
+          })}
         </ul>
-
         {/* Mobile Nav */}
         <ul
           id="nav-list"
           className={`${navActive ? "right-0" : "right-[-100%]"} 
-           z-[999] md:w-[40%] text-lg transform transition-all duration-1000 ease-out flex flex-col gap-7 bg-custom-black w-full h-screen fixed items-center justify-center top-0 overflow-hidden`}
+           z-[999] md:w-[40%] text-lg transform transition-all duration-1000 ease-expo flex flex-col gap-7 bg-red-500 w-full h-screen fixed text-white text-5xl items-center justify-center top-0 overflow-hidden `}
         >
-          {navLink.map((link, index) => (
-            <li key={index}>
-              <a href={`#${link.toLowerCase()}`} onClick={closeNav}>
-                {link}
-              </a>
-            </li>
-          ))}
+          <img
+            src={Logo}
+            alt="Logo"
+            className="h-[4rem] mb-5 absolute top-10 left-10"
+          />
+          {navLink.map((link, index) => {
+            const href = link === "Home" ? "/" : `#${link.toLowerCase()}`;
+            return (
+              <li key={index}>
+                <a
+                  href={href}
+                  onClick={closeNav}
+                  className="font-montreal-regular"
+                >
+                  {link}
+                </a>
+              </li>
+            );
+          })}
         </ul>
       </div>
 
       {/* End Mobile Nav */}
 
       <div
-        className={`p-6 py-8 rounded-full bg-white fixed top-5 right-5 z-[9999] cursor-pointer transition-opacity duration-500 ${
-          showButton ? "opacity-100" : "opacity-0 pointer-events-none"
+        className={`p-6 py-8 rounded-full bg-white fixed top-5 right-5 z-[9999] cursor-pointer  ${
+          showButton
+            ? "scale-100 opacity-100 transition-transform duration-500"
+            : "scale-0 opacity-80 pointer-events-none transition-transform duration-500"
         }`}
         onClick={toggleNav}
       >
@@ -97,19 +110,19 @@ function Navbar() {
           aria-controls="nav-list"
         >
           <span
-            className={`bg-custom-black block transition-all duration-500 ease-out 
+            className={`bg-custom-black block transition-all duration-300 ease-out 
               h-0.5 w-6 rounded-sm ${
                 navActive ? "rotate-45 translate-y-1" : "-translate-y-0.5"
               }`}
           ></span>
           <span
-            className={`bg-custom-black block transition-all duration-500 ease-out 
+            className={`bg-custom-black block transition-all duration-300 ease-out 
               h-0.5 w-6 rounded-sm my-0.5 ${
                 navActive ? "opacity-0" : "opacity-100"
               }`}
           ></span>
           <span
-            className={`bg-custom-black block transition-all duration-500 ease-out 
+            className={`bg-custom-black block transition-all duration-300 ease-out 
               h-0.5 w-6 rounded-sm ${
                 navActive ? "-rotate-45 -translate-y-1" : "translate-y-0.5"
               }`}

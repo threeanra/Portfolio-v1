@@ -1,4 +1,4 @@
-import Navbar from "../navbar/Navbar";
+import Navbar from "../Element/navbar/Navbar";
 import { easeInOut, motion } from "framer-motion";
 
 // Variants
@@ -24,7 +24,7 @@ function Hero() {
   return (
     <>
       <Navbar />
-      <div className="container px-7 md:px-0 w-full h-screen flex flex-col justify-center mx-auto text-start text-3xl \">
+      <div className="container px-7 lg:px-0 w-full h-screen flex flex-col justify-center mx-auto text-start text-3xl \">
         <div className="overflow-hidden mt-28">
           <MotionTitle delay={3.6}>
             <b className="font-montreal-bold">Trian</b>, is an
