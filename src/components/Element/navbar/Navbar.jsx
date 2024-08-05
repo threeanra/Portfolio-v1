@@ -46,7 +46,7 @@ function Navbar() {
       className="w-full absolute p-[35px] overflow-hidden"
     >
       <div className="container mx-auto flex justify-between">
-        <a href="#home">
+        <a href="/">
           <img src={Logo} className="max-h-8" alt="Logo" />
         </a>
         <ul className="flex flex-col md:flex-row  text-sm md:text-lg md:gap-2 lg:gap-7 text-montreal-regular">
@@ -69,13 +69,15 @@ function Navbar() {
         <ul
           id="nav-list"
           className={`${navActive ? "right-0" : "right-[-100%]"} 
-           z-[999] md:w-[40%] text-lg transform transition-all duration-1000 ease-expo flex flex-col gap-7 bg-red-500 w-full h-screen fixed text-white text-5xl items-center justify-center top-0 overflow-hidden `}
+           z-[999] md:w-[40%] text-5xl transform transition-all duration-1000 ease-expo flex flex-col gap-7 bg-custom-gray w-full h-screen fixed text-white text-5xl items-center justify-center top-0 overflow-hidden `}
         >
-          <img
-            src={Logo}
-            alt="Logo"
-            className="h-[4rem] mb-5 absolute top-10 left-10"
-          />
+          <a href="/">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="h-[4rem] mb-5 absolute top-10 left-10"
+            />
+          </a>
           {navLink.map((link, index) => {
             const href = link === "Home" ? "/" : `#${link.toLowerCase()}`;
             return (

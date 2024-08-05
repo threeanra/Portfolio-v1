@@ -25,7 +25,7 @@ const LoaderHome = () => {
       exit={{ y: window.innerWidth }}
       className="fixed w-screen h-screen z-40 overflow-hidden"
     >
-      <div className="w-full h-screen flex flex-col justify-center items-center leading-[0] text-3xl bg-custom-black text-white overflow-hidden">
+      <div className="w-full h-screen flex flex-col justify-center items-center leading-[0] text-3xl bg-custom-gray text-white overflow-hidden">
         <motion.span
           initial={{ opacity: 0 }}
           animate={{

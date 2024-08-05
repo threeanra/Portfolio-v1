@@ -13,6 +13,8 @@ export default {
         transparent: "transparent",
         "background-color": "#EBEBEB",
         "custom-black": "#252525",
+        "custom-black-2": "#141516",
+        "custom-gray": "#292929",
       },
     },
   },

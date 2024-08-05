@@ -3,60 +3,44 @@ import Button from "../Element/button/Button";
 
 function AboutMe() {
   return (
-    <section id="about" className="w-full py-28 bg-custom-black">
+    <section id="about" className="w-full py-28 bg-custom-black-2">
       <div className="container mx-auto px-7 lg:px-0">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
-          {/* Image with text overlay for small screens */}
-          <div className="lg:hidden">
-            <h1 className="text-5xl md:text-[58px] md:ml-3 md:mb-5 text-start font-montreal-medium text-white pb-5">
-              A brief intro, who am I?
-            </h1>
+        <div className="grid grid-cols-12 md:gap-20">
+          <div className="col-span-full lg:col-span-6"></div>
+          <div className="col-span-full lg:col-span-6 md:flex flex-col m-0">
+            <p className="text-5xl md:text-[95px] 2xl:text-8xl md:mb-5 text-start font-montreal-medium text-white ">
+              A brief intro, <br />
+              who am I?
+            </p>
+          </div>
+        </div>
+        <div className="grid grid-cols-12 gap-5 md:gap-20 md:mt-10">
+          <div className="col-span-full md:col-span-4 md:flex flex-col">
             <img
               src={Photo}
               alt="Photo"
-              className="rounded-xl w-full object-cover"
-            />
-            <div className="flex items-center">
-              <h1 className="text-lg md:text-xl text-justify font-montreal-regular text-white pt-6">
-                7th semester Informatics Engineering student who is pursuing a
-                bachelor's degree at Indraprastra PGRI University. Who is very
-                enthusiastic about technology, has experience in Android using
-                Kotlin programming language and Android architecture, and has
-                skills in developing web applications.
-              </h1>
-            </div>
-            <div className="lg:mt-6 2xl:mt-10">
-              <Button variant="bg-white h-12 text-custom-black text-lg mt-5 font-montreal-regular">
-                Download Resume
-              </Button>
-            </div>
-          </div>
-
-          {/* Image for larger screens */}
-          <div className="hidden lg:flex">
-            <img
-              src={Photo}
-              alt="Photo"
-              className="rounded-xl w-full h-[30rem] xl:h-[40rem] 2xl:h-[48rem] object-cover"
+              className="md:w-auto h-auto xl:h-[25rem] 2xl:h-[32rem] object-cover rounded-lg my-5 md:my-0"
             />
           </div>
-
-          {/* Text for larger screens */}
-          <div className="hidden lg:flex flex-col sticky top-20 self-start">
-            <h1 className="leading-normal lg:text-[48px] 2xl:text-[63px] font-montreal-medium text-white">
-              A brief intro, who am I?
-            </h1>
-            <p className="lg:text-xl 2xl:text-3xl leading-normal mt-8 font-montreal-light text-white tracking-regular">
+          <div className="col-span-full md:col-span-5 lg:col-span-8 2xl:pr-[50px]">
+            <p className="text-lg lg:text-2xl 2xl:text-3xl leading-normal font-montreal-regular text-white tracking-regular">
               7th semester Informatics Engineering student who is pursuing a
               bachelor's degree at Indraprastra PGRI University. Who is very
               enthusiastic about technology, has experience in Android using
               Kotlin programming language and Android architecture, and has
               skills in developing web applications.
             </p>
-            <div className="mt-auto lg:mt-6 2xl:mt-10">
-              <Button variant="bg-white text-custom-black 2xl:text-2xl lg:h-[75px] font-montreal-regular">
-                Resume
-              </Button>
+            <div className="mt-10 flex flex-col lg:flex-row md:gap-30 xl:pr-10 2xl:pr-12">
+              <p className="text-white font-montreal-light w-full mb-5 md:mb-0 ">
+                ABOUT ME
+              </p>
+              <p className="text-white font-montreal-light text-lg">
+                I am a person who really likes simple and clean design, with
+                very small details that are considered as much as possible, in
+                order to realize the comfort of each other. as well as happy to
+                learn about new things and have good analytical skills to adapt
+                to the surrounding environment quickly.
+              </p>
             </div>
           </div>
         </div>
