@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import "../../index.css";
 import { motion } from "framer-motion";
 
@@ -11,6 +12,19 @@ const greetings = [
 ];
 
 const LoaderHome = () => {
+  useEffect(() => {
+    // Add 'no-scroll' class to body to disable scrolling
+    document.body.classList.add("no-scroll");
+
+    // Remove 'no-scroll' class after animation is done
+    const timer = setTimeout(() => {
+      document.body.classList.remove("no-scroll");
+    }, 3500); // 3.5 seconds + 1 second buffer for the animation
+
+    // Cleanup timeout if component unmounts before the timer ends
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <motion.section
       initial={{ y: 0 }}
