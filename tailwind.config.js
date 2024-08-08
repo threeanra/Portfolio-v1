@@ -11,7 +11,7 @@ export default {
       },
       colors: {
         transparent: "transparent",
-        "background-color": "#EBEBEB",
+        "background-color": "#E5E7DF",
         "custom-black": "#252525",
         "custom-black-2": "#141516",
         "custom-gray": "#292929",

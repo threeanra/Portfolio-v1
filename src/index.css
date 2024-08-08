@@ -28,6 +28,10 @@ body.no-scroll {
   overflow: hidden;
 }
 
+body {
+  margin: 0px;
+}
+
 html {
   scroll-behavior: smooth;
 }

@@ -21,7 +21,7 @@ const characterAnimation = {
     y: 0,
     opacity: 1,
     transition: {
-      duration: 0.6,
+      duration: 0.5,
       ease: "easeInOut",
     },
   },
@@ -32,7 +32,7 @@ const containerAnimation = {
   initial: {},
   animate: {
     transition: {
-      staggerChildren: 0.05,
+      staggerChildren: 0.03,
     },
   },
 };
@@ -45,7 +45,7 @@ const opacityAnimation = {
   open: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 0.8,
       ease: "easeInOut",
     },
   },
@@ -55,15 +55,12 @@ function AboutMe() {
   const aboutMe = useRef(null);
   const desc = useRef(null);
   const descAbout = useRef(null);
-  const isAboutMeInView = useInView(aboutMe, { once: true });
-  const isDescAboutInView = useInView(descAbout, { once: true });
-  const isDescInView = useInView(desc, { once: true });
+  const isAboutMeInView = useInView(aboutMe);
+  const isDescAboutInView = useInView(descAbout);
+  const isDescInView = useInView(desc);
 
   return (
-    <section
-      id="about"
-      className="w-full py-28 md:pt-28 bg-custom-black-2 lg:pb-36"
-    >
+    <section id="about" className="w-full pt-40 bg-background-color lg:pb-36">
       <div className="container mx-auto px-7 lg:px-0">
         <div className="grid grid-cols-12 md:gap-20">
           <div className="col-span-full lg:col-span-6"></div>
@@ -75,7 +72,7 @@ function AboutMe() {
               initial="initial"
               animate={isAboutMeInView ? "animate" : "initial"}
             >
-              <motion.p className="text-5xl md:text-[95px] 2xl:text-8xl md:mb-5 text-start font-montreal-medium text-white">
+              <motion.p className="text-5xl md:text-[95px] 2xl:text-8xl md:mb-5 text-start font-montreal-medium text-black">
                 {splitText("A brief intro,")}
               </motion.p>
             </motion.div>
@@ -85,7 +82,7 @@ function AboutMe() {
               initial="initial"
               animate={isAboutMeInView ? "animate" : "initial"}
             >
-              <motion.p className="text-5xl md:text-[95px] 2xl:text-8xl md:mb-5 text-start font-montreal-medium text-white">
+              <motion.p className="text-5xl md:text-[95px] 2xl:text-8xl md:mb-5 text-start font-montreal-medium text-black">
                 {splitText("who am I?")}
               </motion.p>
             </motion.div>
@@ -105,7 +102,7 @@ function AboutMe() {
               variants={opacityAnimation}
               initial="initial"
               animate={isDescInView ? "open" : "initial"}
-              className="text-lg lg:text-2xl 2xl:text-3xl leading-normal font-montreal-regular text-white tracking-regular"
+              className="text-lg lg:text-2xl 2xl:text-3xl leading-normal font-montreal-regular text-black tracking-regular"
             >
               {`7th semester Informatics Engineering student who is pursuing a
               bachelor's degree at Indraprastra PGRI University. Who is very
@@ -119,7 +116,7 @@ function AboutMe() {
                 variants={opacityAnimation}
                 initial="initial"
                 animate={isDescAboutInView ? "open" : "initial"}
-                className="text-white font-montreal-light w-full mb-5 md:mb-0"
+                className="text-black font-montreal-regular w-full mb-5 md:mb-0"
               >
                 ABOUT ME
               </motion.p>
@@ -128,7 +125,7 @@ function AboutMe() {
                 variants={opacityAnimation}
                 initial="initial"
                 animate={isDescAboutInView ? "open" : "initial"}
-                className="text-white font-montreal-light text-lg"
+                className="text-black font-montreal-regular text-lg"
               >
                 I am a person who really likes simple and clean design, with
                 very small details that are considered as much as possible, in

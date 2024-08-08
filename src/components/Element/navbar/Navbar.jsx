@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { easeInOut, motion } from "framer-motion";
 import Logo from "../../../assets/Logo.png";
 function Navbar() {
-  const navLink = ["About", "Services", "Works", "Contact"];
+  const navLink = ["About,", "Services,", "Works,", "Contact,"];
   const [navActive, setNavActive] = useState(false);
   const [showButton, setShowButton] = useState(false);
 
@@ -43,7 +43,7 @@ function Navbar() {
           delay: 3.8,
         },
       }}
-      className="w-full absolute p-[35px] overflow-hidden"
+      className="w-full absolute z-[9999] p-[35px] overflow-hidden"
     >
       <div className="container mx-auto flex justify-between">
         <a href="/">

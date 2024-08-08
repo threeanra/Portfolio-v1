@@ -2,6 +2,8 @@ import LoaderHome from "../components/loader/Loader";
 import Hero from "../components/hero/Hero";
 import AboutMe from "../components/aboutme/AboutMe";
 import { useEffect } from "react";
+import TechStack from "../components/techstack/TechStack";
+import Description from "../components/description/Description";
 function Home() {
   useEffect(() => {
     setTimeout(() => {
@@ -12,8 +14,10 @@ function Home() {
     <div>
       <LoaderHome />
       <Hero />
+      <Description />
+      <TechStack />
+
       <AboutMe />
-      <Hero />
     </div>
   );
 }
