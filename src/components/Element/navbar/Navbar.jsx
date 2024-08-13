@@ -51,7 +51,7 @@ function Navbar() {
         </a>
         <ul className="flex flex-col md:flex-row  text-sm md:text-lg md:gap-2 lg:gap-7 text-montreal-regular">
           {navLink.map((link, index) => {
-            const href = `#${link.toLowerCase()}`;
+            const href = `#${link.toLowerCase().split(",")[0]}`;
             return (
               <li key={index}>
                 <a
@@ -79,7 +79,8 @@ function Navbar() {
             />
           </a>
           {navLink.map((link, index) => {
-            const href = link === "Home" ? "/" : `#${link.toLowerCase()}`;
+            const href =
+              link === "Home" ? "/" : `#${link.toLowerCase()}.split(",")[0]`;
             return (
               <li key={index}>
                 <a

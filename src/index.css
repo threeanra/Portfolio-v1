@@ -24,12 +24,22 @@
   }
 }
 
+/* For Debugging */
+/* * {
+  outline: 1px solid rgba(255, 0, 0, 0.2) !important;
+} */
+
+html::-webkit-scrollbar {
+  display: none;
+}
+
 body.no-scroll {
   overflow: hidden;
 }
 
-body {
-  margin: 0px;
+html {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
 }
 
 html {

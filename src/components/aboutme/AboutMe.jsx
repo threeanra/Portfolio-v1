@@ -60,7 +60,10 @@ function AboutMe() {
   const isDescInView = useInView(desc);
 
   return (
-    <section id="about" className="w-full pt-40 bg-background-color lg:pb-36">
+    <section
+      id="about"
+      className="w-full pt-40 bg-background-color lg:pb-36 overflow-hidden"
+    >
       <div className="container mx-auto px-7 lg:px-0">
         <div className="grid grid-cols-12 md:gap-20">
           <div className="col-span-full lg:col-span-6"></div>

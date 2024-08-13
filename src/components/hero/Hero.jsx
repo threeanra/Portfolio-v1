@@ -53,7 +53,7 @@ function Hero() {
     <>
       <Navbar />
       <section className="bg-background-color overflow-hidden relative">
-        <div className="container px-7 lg:px-0 w-full h-screen flex flex-col justify-center mx-auto overflow-hidden">
+        <div className="container px-7 lg:px-0 w-full h-screen flex flex-col justify-center mx-auto overflow-hidden ">
           <div className="grid grid-cols-12 md:gap-12 lg:gap-0 overflow-hidden">
             <motion.div
               initial={{ y: 100 }}
@@ -89,15 +89,15 @@ function Hero() {
               }}
               className="overflow-hidden col-span-12 md:col-span-10 md:col-start-4 order-1 md:order-2 lg:col-start-5 text-xl md:text-3xl 2xl:text-4xl font-montreal-medium mt-40 md:mt-0 tracking-normal"
             >
-              Hey! I'm <b>Trian</b>, and I'm thrilled to have you here. This
-              space is a reflection of my passions, projects, and the journey
-              I'm on.
+              Hey! I&apos;m <b>Trian</b>, and I&apos;m thrilled to have you
+              here. This space is a reflection of my passions, projects, and the
+              journey I&apos;m on.
             </motion.div>
           </div>
         </div>
         <div
           className={`absolute ${
-            isMdOrLarger ? "bottom-10" : "top-[80px]"
+            isMdOrLarger ? "bottom-5" : "top-[80px]"
           } overflow-hidden lg:mb-[-30px] pt-7`}
         >
           <motion.div
@@ -115,13 +115,13 @@ function Hero() {
           >
             <p
               ref={firstText}
-              className="relative text-9xl overflow-hidden pt-[50px] lg:text-[220px] pr-[50px] font-montreal-medium tracking-tighter"
+              className="relative text-9xl overflow-hidden pt-[50px] lg:text-[230px] 2xl:text-[350px] pr-[50px] font-montreal-medium tracking-tighter"
             >
               Android & Website Developer -
             </p>
             <p
               ref={secondText}
-              className="text-9xl lg:text-[220px] pt-[50px] pr-[50px] font-montreal-medium tracking-tighter"
+              className="text-9xl lg:text-[230px] 2xl:text-[350px] pt-[50px] pr-[50px] font-montreal-medium tracking-tighter"
             >
               Android & Website Developer -
             </p>
