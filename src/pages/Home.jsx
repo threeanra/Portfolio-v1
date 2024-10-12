@@ -4,6 +4,7 @@ import AboutMe from "../components/aboutme/AboutMe";
 import { useEffect } from "react";
 import TechStack from "../components/techstack/TechStack";
 import Description from "../components/description/Description";
+import { Projects } from "../projects/Projects";
 function Home() {
   useEffect(() => {
     setTimeout(() => {
@@ -11,14 +12,15 @@ function Home() {
     }, 3000);
   });
   return (
-    <div>
+    <>
       <LoaderHome />
       <Hero />
       <Description />
       <TechStack />
+      <Projects />
 
       <AboutMe />
-    </div>
+    </>
   );
 }
 

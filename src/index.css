@@ -22,6 +22,9 @@
     font-family: "Montreal Regular";
     src: url(./assets/font/Montreal-Regular.otf) format("opentype");
   }
+  :root {
+    --radius: 0.5rem;
+  }
 }
 
 /* For Debugging */
